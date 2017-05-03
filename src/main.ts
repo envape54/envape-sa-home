@@ -1,14 +1,20 @@
+
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-import * as firebaseConfig from "firebase.config";
+import * as $ from "jquery";
+import * as ngbs from "bootstrap";
+import * as fbConfig from "firebase.config";
 
 if (environment.production)
 	enableProdMode();
 
 platformBrowserDynamic().bootstrapModule(AppModule);
 
-firebaseConfig.initApp();
+// Initialise firebase after all other loading and processing
+fbConfig.initApp();
+
+console.log("all loaded!");
