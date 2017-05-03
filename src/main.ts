@@ -5,8 +5,6 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-import * as $ from "jquery";
-import * as ngbs from "bootstrap";
 import * as fbConfig from "firebase.config";
 
 if (environment.production)
