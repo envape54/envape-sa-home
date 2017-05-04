@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+<nav class="navbar fixed-top navbar-toggleable-md navbar-inverse bg-inverse">
 
 	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,7 +8,7 @@
 
 	</button>
 
-	<a class="navbar-brand" href="#">
+	<a class="navbar-brand" routerLink="/">
 
 		<small>endulge | enjoy</small> envape
 	</a>
@@ -17,31 +17,9 @@
 
 		<ul class="navbar-nav mr-auto">
 
-			<li class="nav-item active">
+			<li class="nav-item" routerLinkActive="active">
 
-				<a class="nav-link" href="#">Home</a>
-
-			</li>
-
-			<li class="nav-item dropdown">
-
-				<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
-					Products
-				</a>
-
-				<div class="dropdown-menu">
-
-					<a class="dropdown-item" href="#">Oils</a>
-					<a class="dropdown-item" href="#">Vapes</a>
-					<a class="dropdown-item" href="#">Mods</a>
-					<a class="dropdown-item" href="#">Atomisers</a>
-					<a class="dropdown-item" href="#">Tanks</a>
-					<a class="dropdown-item" href="#">Coils</a>
-					<a class="dropdown-item" href="#">Nozzles</a>
-					<a class="dropdown-item" href="#">Batteries</a>
-					<a class="dropdown-item" href="#">Cases</a>
-
-				</div>
+				<a class="nav-link" routerLink="/products">Products</a>
 
 			</li>
 
@@ -57,3 +35,9 @@
 	</div>
 
 </nav>
+
+<div style="margin-top: 55px;">
+
+	<router-outlet></router-outlet>
+
+</div>

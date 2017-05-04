@@ -1,0 +1,16 @@
+
+<div class="video-background" *ngIf="url">
+
+	<div class="video-foreground" *ngIf="url">
+
+		<iframe
+			id="ytplayer"
+			type="text/html"
+			width="100%"
+			[src]="url"
+			frameborder="0">
+		</iframe>
+
+	</div>
+
+</div>
