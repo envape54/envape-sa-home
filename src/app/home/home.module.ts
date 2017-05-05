@@ -1,5 +1,6 @@
 
 import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
 
 import { YouTubePlayerModule } from "../shared/modules/youtube-player/youtube-player.module";
@@ -17,6 +18,7 @@ const HomeRoutes: Routes = [
 		HomeComponent
 	],
 	imports: [
+		CommonModule,
 		YouTubePlayerModule,
 		RouterModule.forRoot(HomeRoutes)
 	],

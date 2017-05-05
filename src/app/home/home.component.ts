@@ -1,5 +1,5 @@
 
-import { Component } from "@angular/core";
+import { , OnInit } from "@angular/core";
 
 import * as $ from "jquery";
 
@@ -8,12 +8,15 @@ import * as $ from "jquery";
 	templateUrl: "./home.component.html",
 	styleUrls: [ "./home.component.scss" ]
 })
-export class HomeComponent
-{
+export class HomeComponent implements OnInit {
 	private videoId: string = "Wl1XIqbAhdo";
 
 	constructor() {
 		$(window).scroll(() => $(".videoOverlay").css("opacity", $(window).scrollTop() / 650));
 		$(window).on("YTReady", (event: any) => event.target.mute());
+	}
+
+	public ngOnInit() {
+
 	}
 }
