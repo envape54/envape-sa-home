@@ -9,7 +9,8 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { AppComponent } from "./app.component";
 import { HomeModule } from "./home/home.module";
-import { ProductsModule } from "./products/products.module";
+import { GoodiesModule } from "./goodies/goodies.module";
+import { SocialModule } from "./social/social.module";
 
 @NgModule({
 	declarations: [
@@ -22,7 +23,8 @@ import { ProductsModule } from "./products/products.module";
 		HttpModule,
 		RouterModule,
 		HomeModule,
-		ProductsModule
+		GoodiesModule,
+		SocialModule
 	],
 	providers: [
 
