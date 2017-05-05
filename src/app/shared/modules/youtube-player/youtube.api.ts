@@ -58,7 +58,7 @@ export class Player {
 		this._yt = window["YT"] = window["YT"] || {
 			loading: 1,
 			loaded: 0,
-			ready: (callback: { (): void}): void => this.ready(callback),
+			ready: (callback: () => void): void => this.ready(callback),
 			setConfig: (config: any): void => this.setConfig(config)
 		};
 
@@ -71,19 +71,19 @@ export class Player {
 
 	private loadWidget(selector: string): void {
 
-		let element: HTMLElement = <HTMLElement>$(selector);
+		const element: HTMLElement = <HTMLElement>$(selector);
 
-		let a = document.createElement("script");
+		const a = document.createElement("script");
 		a.type = "text/javascript";
 		a.id = "www-widgetapi-script";
 		a.src = "https://s.ytimg.com/yts/jsbin/www-widgetapi-vflktVMi7/www-widgetapi.js";
 		a.async = true;
 
-		let b = document.getElementsByTagName("script")[0];
+		const b = document.getElementsByTagName("script")[0];
 		b.parentNode.insertBefore(a, b);
 	}
 
-	private ready(callback: { (): void }): void {
+	private ready(callback: () => void): void {
 		if (this._yt.loaded)
 			callback();
 

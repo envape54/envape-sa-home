@@ -10,7 +10,7 @@ const SocialRoute: Routes = [
 		path: "social",
 		component: SocialComponent
 	}
-]
+];
 
 @NgModule({
 	imports: [

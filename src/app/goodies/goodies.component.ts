@@ -25,8 +25,8 @@ export class GoodiesComponent implements OnInit {
 	private getCategories(): void {
 		this.goodiesService.getCategories()
 			.map((categories: Category[]): Category[][] => {
-				let categoryGrid: Array<Array<Category>> = [];
-				let rows: number = Math.ceil(categories.length / this.rowWidth);
+				const categoryGrid: Array<Array<Category>> = [];
+				const rows: number = Math.ceil(categories.length / this.rowWidth);
 
 				for (let row: number = 0; row < rows; row++) {
 					let categoryRow: Array<Category> = categories.slice(row * this.rowWidth, (row * this.rowWidth + this.rowWidth));
@@ -38,8 +38,6 @@ export class GoodiesComponent implements OnInit {
 			})
 			.subscribe((categories: Category[][]) => {
 				this.categorySet = categories;
-
-				categories.map
 			});
 	}
 }

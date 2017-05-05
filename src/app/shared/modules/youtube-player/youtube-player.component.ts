@@ -14,7 +14,7 @@ export class YouTubePlayerComponent {
 	public videoId: string;
 
 	private get url(): SafeResourceUrl {
-		var url: string = "";
+		let url: string = "";
 
 		if (this.videoId)
 			url = `https://www.youtube.com/embed/${ this.videoId }`;
