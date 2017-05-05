@@ -1,0 +1,10 @@
+
+.envp-goodie > .card-block {
+	opacity: 0.0;
+	transition: 250ms;
+}
+
+.envp-goodie:hover > .card-block {
+	opacity: 1.0;
+	transition: 250ms;
+}

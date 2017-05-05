@@ -4,13 +4,14 @@ import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
 
 import { GoodiesComponent } from "./goodies.component";
+import { GoodiesService } from "../shared/services";
 
 const GoodyRoutes: Routes = [
 	{
 		path: "goodies",
 		component: GoodiesComponent
 	}
-]
+];
 
 @NgModule({
 	imports: [
@@ -19,6 +20,9 @@ const GoodyRoutes: Routes = [
 	],
 	declarations: [
 		GoodiesComponent
+	],
+	providers: [
+		GoodiesService
 	],
 	bootstrap: [
 		GoodiesComponent

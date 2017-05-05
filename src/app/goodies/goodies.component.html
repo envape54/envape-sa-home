@@ -8,4 +8,29 @@
 
 	</div>
 
+	<div *ngIf="categorySet">
+
+		<div class="row mb-4" *ngFor="let categoryRow of categorySet">
+
+			<div class="col-md-3" *ngFor="let category of categoryRow">
+
+				<div class="card envp-goodie" style="padding: 5px;" [ngStyle]="{ 'background-image': 'url(' + category.thumbnail + ')' }">
+
+					<div class="card-block" style="background-color: rgba(255, 255, 255, 0.75);">
+
+						<h4 class="card-title">{{ category.name }}</h4>
+
+						<p class="card-text">{{ category.description }}</p>
+						<p class="align-right"><a href="#">Browse</a></p>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
 </div>
