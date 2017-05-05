@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from "@angular/core";
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer } from "@angular/platform-browser";
 
 import { Category } from "../shared/models";
 import { GoodiesService } from "../shared/services";
@@ -24,19 +24,12 @@ export class GoodiesComponent implements OnInit {
 
 	private getCategories(): void {
 		this.goodiesService.getCategories()
-			// .map((categories: Category[]): Category[] => {
-			// 	for (var index: number = 0; index < categories.length; index++) {
-			// 		var category: Category = categories[index] as Category;
-			// 		var categoryThumbnail: string = category.thumbnail;
-			// 		var safeThumbnail: string = this.domSanitizer.bypassSecurityTrustStyle(categoryThumbnail);
-			// 	}
-			// })
 			.map((categories: Category[]): Category[][] => {
-				var categoryGrid: Array<Array<Category>> = [];
-				var rows: number = Math.ceil(categories.length / this.rowWidth);
+				let categoryGrid: Array<Array<Category>> = [];
+				let rows: number = Math.ceil(categories.length / this.rowWidth);
 
-				for (var row: number = 0; row < rows; row++) {
-					var categoryRow: Array<Category> = categories.slice(row * this.rowWidth, (row * this.rowWidth + this.rowWidth));
+				for (let row: number = 0; row < rows; row++) {
+					let categoryRow: Array<Category> = categories.slice(row * this.rowWidth, (row * this.rowWidth + this.rowWidth));
 
 					categoryGrid.push(categoryRow);
 				}

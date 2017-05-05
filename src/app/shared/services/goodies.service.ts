@@ -10,7 +10,7 @@ export class GoodiesService {
 	constructor() { }
 
 	public getCategories(): Observable<Category[]> {
-		var categories: Category[] = [
+		const categories: Category[] = [
 			{
 				id: 1,
 				name: "Vapes",

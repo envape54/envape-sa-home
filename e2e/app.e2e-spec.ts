@@ -1,14 +1,14 @@
-import { EnvapePage } from './app.po';
+import { EnvapePage } from "./app.po";
 
-describe('envape App', () => {
-  let page: EnvapePage;
+describe("envape App", () => {
+	let page: EnvapePage;
 
-  beforeEach(() => {
-    page = new EnvapePage();
-  });
+	beforeEach(() => {
+		page = new EnvapePage();
+	});
 
-  it('should display message saying app works', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
-  });
+	it("should display message saying app works", () => {
+		page.navigateTo();
+		expect(page.getParagraphText()).toEqual("app works!");
+	});
 });

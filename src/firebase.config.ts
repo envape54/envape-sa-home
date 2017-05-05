@@ -2,15 +2,9 @@
 import { initializeApp } from "firebase/app";
 import * as firebaseAuth from "firebase/auth";
 
-var initApp = function() {
+const initApp: () => void = function() {
 	// Initialize Firebase
-	// var firebase = require("firebase/app");
-	// require("firebase/auth");
-	// require("firebase/database");
-	// require("firebase/storage");
-	// require("firebase/messaging");
-
-	var config = {
+	const config: Object = {
 		apiKey: "AIzaSyA-gXDA9Npq57wvTvNmQsOWHHMd0dgQ_Qc",
 		authDomain: "envape-99d26.firebaseapp.com",
 		// databaseURL: "https://envape-99d26.firebaseio.com",
@@ -20,7 +14,6 @@ var initApp = function() {
 	};
 
 	initializeApp(config);
-
-}
+};
 
 export { initApp };
