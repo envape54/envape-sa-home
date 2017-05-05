@@ -10,6 +10,10 @@ const GoodyRoutes: Routes = [
 	{
 		path: "goodies",
 		component: GoodiesComponent
+	},
+	{
+		path: "goodies/:category",
+		component: GoodiesComponent
 	}
 ];
 

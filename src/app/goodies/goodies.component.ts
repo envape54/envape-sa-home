@@ -11,7 +11,7 @@ import { GoodiesService } from "../shared/services";
 	styleUrls: ["./goodies.component.scss"]
 })
 export class GoodiesComponent implements OnInit {
-	private rowWidth: number = 4;
+	private rowWidth: number = 3;
 	private categorySet: Array<Array<Category>>;
 
 	constructor(
