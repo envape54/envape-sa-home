@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Params } from "@angular/router";
 import { DomSanitizer } from "@angular/platform-browser";
 
 import { Category } from "../shared/models";
@@ -16,15 +17,26 @@ export class GoodiesComponent implements OnInit {
 
 	constructor(
 		private goodiesService: GoodiesService,
-		private domSanitizer: DomSanitizer) { }
+		private domSanitizer: DomSanitizer,
+		private route: ActivatedRoute) { }
 
 	ngOnInit() {
-		this.getCategories();
+		this.route.params.subscribe((parameters: Params) => {
+			const category: string = parameters["category"];
+
+			if (category)
+				this.getGoodies(category);
+
+			else
+				this.getCategories();
+		});
 	}
 
 	private getCategories(): void {
 		this.goodiesService.getCategories()
 			.map((categories: Category[]): Category[][] => {
+				// Map the incoming 1D array to a 2D array, using
+				// this.rowWidth to determine dimentions
 				const categoryGrid: Array<Array<Category>> = [];
 				const rows: number = Math.ceil(categories.length / this.rowWidth);
 
@@ -39,5 +51,9 @@ export class GoodiesComponent implements OnInit {
 			.subscribe((categories: Category[][]) => {
 				this.categorySet = categories;
 			});
+	}
+
+	private getGoodies(category: string): void {
+
 	}
 }
